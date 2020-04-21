@@ -82,12 +82,11 @@
 		   <version>5.4.2.Final</version>
 		   <scope>runtime</scope>
 		</dependency>
-		 
+		
 		<dependency>
-		   <groupId>mysql</groupId>
-		   <artifactId>mysql-connector-java</artifactId>
-		   <version>6.0.6</version>
-		   <scope>runtime</scope>
+		    <groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc41</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 	
