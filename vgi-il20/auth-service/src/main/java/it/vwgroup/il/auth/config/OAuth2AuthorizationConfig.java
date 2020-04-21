@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 
-import it.vwgroup.il.auth.service.security.MongoUserDetailsService;
+import it.vwgroup.il.auth.service.security.SqlUserDetailsService;
 
 /**
  * @author cdov
@@ -31,7 +31,7 @@ public class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private MongoUserDetailsService userDetailsService;
+    private SqlUserDetailsService userDetailsService;
 
     @Autowired
     private Environment env;

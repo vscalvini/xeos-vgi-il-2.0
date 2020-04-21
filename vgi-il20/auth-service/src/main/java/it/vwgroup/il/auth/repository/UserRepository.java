@@ -6,11 +6,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -22,7 +19,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import it.vwgroup.il.auth.domain.User;
 
-@Configuration
 @EnableTransactionManagement
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
@@ -68,8 +64,8 @@ public interface UserRepository extends JpaRepository<User, String> {
 	 
 	default Properties additionalProperties() {
 	    Properties properties = new Properties();
-	    properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-	    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+//	    properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+	    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
 	        
 	    return properties;
 	}

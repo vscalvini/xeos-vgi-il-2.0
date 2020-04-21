@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import it.vwgroup.il.auth.service.security.MongoUserDetailsService;
+import it.vwgroup.il.auth.service.security.SqlUserDetailsService;
 
 /**
  * @author cdov
@@ -18,7 +18,7 @@ import it.vwgroup.il.auth.service.security.MongoUserDetailsService;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private MongoUserDetailsService userDetailsService;
+    private SqlUserDetailsService userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

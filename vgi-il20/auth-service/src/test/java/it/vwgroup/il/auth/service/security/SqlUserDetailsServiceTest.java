@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import it.vwgroup.il.auth.domain.User;
 import it.vwgroup.il.auth.repository.UserRepository;
-import it.vwgroup.il.auth.service.security.MongoUserDetailsService;
+import it.vwgroup.il.auth.service.security.SqlUserDetailsService;
 
 import java.util.Optional;
 
@@ -18,10 +18,10 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class MongoUserDetailsServiceTest {
+public class SqlUserDetailsServiceTest {
 
 	@InjectMocks
-	private MongoUserDetailsService service;
+	private SqlUserDetailsService service;
 
 	@Mock
 	private UserRepository repository;

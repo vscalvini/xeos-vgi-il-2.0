@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import it.vwgroup.il.auth.repository.UserRepository;
 
 @Service
-public class MongoUserDetailsService implements UserDetailsService {
+public class SqlUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private UserRepository repository;
