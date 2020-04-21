@@ -10,15 +10,18 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
-
+/*
 	@Id
 	@Column(name="id", unique=true)
 	private int id;
-	
+*/	
+	@Id
+	@Column(name="username", unique=true)
 	private String username;
 
 	private String password;
-	
+
+/*	
 	@Id
 	public int getId() {
 		return id;
@@ -27,7 +30,8 @@ public class User implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+*/
+	
 	public String getUsername() {
 		return username;
 	}

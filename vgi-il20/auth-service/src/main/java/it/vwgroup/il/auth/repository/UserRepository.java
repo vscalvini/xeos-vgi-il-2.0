@@ -6,6 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -23,7 +24,7 @@ import it.vwgroup.il.auth.domain.User;
 
 @Configuration
 @EnableTransactionManagement
-@Repository("userRepository")
+@Repository
 public interface UserRepository extends JpaRepository<User, String> {
 	
 	@Bean
@@ -34,7 +35,7 @@ public interface UserRepository extends JpaRepository<User, String> {
 	    dataSource.setUsername("sa");
 	    dataSource.setPassword("administrator");
 	    dataSource.setUrl(
-	      "jdbc:sqlserver://127.0.0.1:52188;databaseName=tryAuth;"); 
+	      "jdbc:sqlserver://127.0.0.1:52188;databaseName=VGI-IL-20;"); 
 	     
 	    return dataSource;
 	}
@@ -43,7 +44,7 @@ public interface UserRepository extends JpaRepository<User, String> {
 	public default LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 	    em.setDataSource(dataSource());
-	    em.setPackagesToScan(new String[] { "com.baeldung.persistence.model" });
+	    em.setPackagesToScan(new String[] { "it.vwgroup.il.auth.domain" });
 	 
 	    JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 	    em.setJpaVendorAdapter(vendorAdapter);
