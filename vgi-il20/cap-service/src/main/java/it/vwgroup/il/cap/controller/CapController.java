@@ -13,6 +13,7 @@ import it.vwgroup.il.cap.domain.Cap;
 import it.vwgroup.il.cap.service.CapService;
 
 @RestController
+@RequestMapping("/T_CN_CAP")
 public class CapController {
 	@Autowired
 	private CapService capService;
