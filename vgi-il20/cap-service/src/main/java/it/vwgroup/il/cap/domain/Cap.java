@@ -1,10 +1,17 @@
 package it.vwgroup.il.cap.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.springframework.data.annotation.Id;
 
+@Entity
+@Table(name = "T_CN_CAP")
 public class Cap {
 	
 	@Id
+	@Column(name="CAP", unique=true)
 	private String cap;
 	
 	private String nation;
