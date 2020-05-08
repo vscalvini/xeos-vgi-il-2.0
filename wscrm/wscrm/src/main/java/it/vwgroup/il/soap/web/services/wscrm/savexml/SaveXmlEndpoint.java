@@ -48,7 +48,7 @@ public class SaveXmlEndpoint {
 //            System.out.println(jsonPrettyPrintString);
 
             RestTemplate restTemplate = new RestTemplate();
-            String resourceUrl = "http://localhost:8088/sendKafka";//?message=" + jsonPrettyPrintString;
+            String resourceUrl = "http://localhost:8088/sendLead";//?message=" + jsonPrettyPrintString;
 
 //            Boolean foo = restTemplate.getForObject(resourceUrl, Boolean.class);
 
